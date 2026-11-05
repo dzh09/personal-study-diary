@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机场安检与酒类店的验证场景</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">机场安检与酒类店的验证场景</h1>
+<div class="meta">案例 · 科技 · 入 2026-11-02</div>
+<p class="lead">两个场景放在一起，说明「同一标准，不同策略」：一个追求核对彻底，一个追求少给数据。它直接反驳了「一次演示就能选型」的做法。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/9aUBUMmhC4s5mEJgXHDL" target="_blank" rel="noopener noreferrer">移动身份系统的密码学基础ISO18013-5 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<table><thead><tr><th>维度</th><th>机场安检检查点</th><th>酒类商店年龄验证</th></tr></thead><tbody><tr><td>目标</td><td>身份与乘客名单全面核对</td><td>快速、最少数据暴露</td></tr><tr><td>请求属性</td><td>姓、名、照片、出生日期、证件号、签发机构、Real ID 标志</td><td><code>age_over_21</code> 布尔值＋肖像</td></tr><tr><td>额外动作</td><td>依联邦信任列表验证文档签名者证书，执行人脸比对</td><td>验证密码学签名，屏幕显示肖像与通过状态</td></tr><tr><td>架构重点</td><td>高保证级别与信任链</td><td>数据最小化与流程简洁</td></tr></tbody></table>
+<p><strong>结论（原文的判断）</strong>：不能凭一次演示选型。为机场优化的实现，可能暴露零售不需要的数据；为简单年龄验证优化的方案，可能给不出高保证所需的控制。</p>
+<p><strong>可迁移</strong>：选型时先写清「交易类别清单」，再按类别分别评估——同一套 SDK 在不同依赖方场景下的得分可能完全相反。</p>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-02-%E5%A4%96%E5%8C%85%E5%AE%9E%E7%8E%B0%E4%B8%8D%E7%AD%89%E4%BA%8E%E5%A4%96%E5%8C%85%E6%9E%B6%E6%9E%84%E8%B4%A3%E4%BB%BB.html">外包实现不等于外包架构责任</a> — 本案例的技术与治理前提</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>Real ID 合规要求的具体条款待补</li><li>追问：高保证场景下如何避免「一次出示留下长期记录」</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>

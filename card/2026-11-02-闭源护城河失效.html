@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>闭源护城河失效</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">闭源护城河失效</h1>
+<div class="meta">观点 · 科技 · 入 2026-11-02</div>
+<p class="lead">当 AI 能自动化逆向二进制，闭源不再构成壁垒，可能加速应用转向只提供云服务的形态——竞争的锚点从代码转向硬件与云端。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/8mCjWWFLdjDA2vb51QZs" target="_blank" rel="noopener noreferrer">当AI能读懂二进制闭源软件还剩多少护城河 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>命题</strong>：二进制不再是黑箱 → 闭源的技术壁垒下降。</p>
+<p><strong>两条推论（均出自本篇引述）</strong></p>
+<ol><li><strong>形态迁移</strong>：大型科技公司可能加速把应用搬到云端，「只要不再提供二进制文件，至少就能切断一种逆向工程途径」（HN 用户 revelationnow）。→ 推论：未来「闭源」更多靠<strong>不交付</strong>维持，而不是靠<strong>编译</strong>。</li><li><strong>价值转移</strong>：AMD 总监 Sreekanth Pannala——「我们已经从软件为王、硬件只是商品的时代，走到了硬件为王、专有软件越来越容易被替代的时代。」</li></ol>
+<p><strong>这个判断的边界（我的补充，非原文）</strong></p>
+<ul><li>逆向拿到的是<strong>实现</strong>，不是<strong>资产</strong>：模型权重、数据、品牌、渠道、合规资质都不在二进制里。</li><li>越是重运营、重生态的软件，护城河越不在代码；越是单点工具型软件，越容易被复制。</li><li>云端化只是把攻击面从二进制挪到 API 与协议，不是消除。</li></ul>
+<p><strong>用法</strong>：谈「开源与闭源」「技术壁垒」类题目时，可作反直觉论据，但须标明是业界观点而非定论。</p>
+<ul><li><strong>它是怎么做到的</strong>（原卡并入）：MCP 桥接范式——模型不直接啃二进制，而是把 Ghidra／Hopper／IDA 通过 MCP 暴露成工具接口，由智能体查询、追踪、验证假设；REA 就是这一范式的实现。</li><li><strong>随之而来的争议</strong>（原卡并入）：逆向本身在多数法域合法（互操作、安全研究），违法的是目的不是手段；AI 把手段成本压到近零，于是「合法能力」与「滥用规模」脱钩——规制对象从行为转向规模，现有法律跟不上。</li></ul>
+<h2>相关笔记</h2>
+<ul><li>2026-11-02-当AI能读懂二进制闭源软件还剩多少护城河 — 原始剪藏</li><li><a href="card/2026-11-02-REA%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93.html">REA 逆向工程智能体</a> — 命题的技术前提</li><li><a href="card/2026-11-01-%E7%B3%BB%E7%BB%9F%E6%8D%A2%E6%80%A7%E8%83%BD.html">系统换性能</a> — 另一条「硬件权重上升」的判断，可互证</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>找反例：有没有靠算法保密长期存活的商业软件？（历史上加密算法、量化策略）</li><li>追问：SaaS 化之后，「不交付二进制」真能阻断逆向吗？协议逆向的难度如何</li><li>核实 Pannala 的原话语境，避免断章取义</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>

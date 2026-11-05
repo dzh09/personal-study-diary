@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>外包实现不等于外包架构责任</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">外包实现不等于外包架构责任</h1>
+<div class="meta">概念 · 科技 · 入 2026-11-02</div>
+<p class="lead">全篇核心判断：采购的是实现效率，不是信任决策。能不能托付看四条：是不是每笔交易都过它、断网还能不能用、能不能只给必要字段、藏起来之后谁还敢负责。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/9aUBUMmhC4s5mEJgXHDL" target="_blank" rel="noopener noreferrer">移动身份系统的密码学基础ISO18013-5 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>判断</strong>：提供商的 <code>verifyCredential()</code> 能跑通，只说明 API 可用；企业仍须回答六个问题——</p>
+<ol><li>凭证存在哪？设备密钥如何保护？</li><li>谁管签发方信任锚？证书如何验证与轮换？</li><li>凭证有效性与撤销怎么处理，尤其验证方离线时？</li><li>哪些属性会被披露？能否强制执行数据最小化？</li><li>提供商收集哪些遥测？出示事件能否关联到具体用户？</li><li>提供商不可用时怎么办？能否不改架构就换供应商？</li></ol>
+<p><strong>为什么这些不能外包</strong>：它们属于信任边界，一旦出错是企业的责任，不是 SDK 的 bug。</p>
+<p><strong>迁移</strong>：换成任何第三方能力都成立——支付、风控、地图、大模型 API。判断句式：「这件事出了事，谁负责？如果是我们，那就不能只看 API 文档。」</p>
+<ul><li><strong>四条判据</strong>（原各一张卡，现并入本卡）：</li><li><strong>架构级单点</strong>：单点不是「经常挂」，而是「每笔交易都必须经过它」；99.99% 可用性 × 每笔依赖，仍是单点。</li><li><strong>离线能力</strong>：演示全程联网，就不能证明有离线能力；九类必测——无网出示、无网验证、缓存信任材料、过期凭证、过期撤销信息、恢复网络、重连同步、时钟异常等。</li><li><strong>选择性披露</strong>：同一凭证可只给一个布尔值（<code>age_over_21</code>），配套是数据最小化与零追踪；缺一条，技术就成监控工具。</li><li><strong>抽象边界</strong>：该藏的（CBOR、APDU、密码学库、NFC 会话）与必露的（信任锚、签发方、验证结果、已披露属性、撤销状态、对提供商的依赖、离线能力、安全边界、故障条件）分两张清单；标准不是难易，是「藏起来之后谁还敢负责」。</li><li><strong>投产前五问</strong>：信任边界在哪、数据给了谁、断网能不能用、哪个环节断了全停、换供应商要多久。不必懂密码学也能问，每问都能落成一张表。</li></ul>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-02-Build-Buy-Govern%E4%B8%89%E5%88%86%E6%B3%95.html">Build-Buy-Govern 三分法</a> — 据此判断哪些自建、哪些采购</li><li><a href="card/2026-11-01-%E7%94%A8AI%E5%B8%AE%E5%8A%A9%E8%87%AA%E5%B7%B1%E4%B8%8E%E8%AE%A9AI%E4%BB%A3%E8%A1%A8%E8%87%AA%E5%B7%B1.html">用AI帮助自己与让AI代表自己</a> — 同属「边界划在哪」的问题</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>找一份第三方 SDK 采购的尽调清单做对照</li><li>追问：中小企业没有安全团队时，这六问谁来回答</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>
