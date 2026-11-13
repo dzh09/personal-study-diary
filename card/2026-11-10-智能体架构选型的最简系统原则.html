@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智能体架构选型的最简系统原则</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">智能体架构选型的最简系统原则</h1>
+<div class="meta">方法 · 科技 · 入 2026-11-10</div>
+<p class="lead">选型不是选最强，而是选「能可靠解决问题的最简系统」：按任务复杂度、可靠性要求、可解释性、延迟、成本五维权衡。线性任务用链，要分支重试用图，正确性优先且输出可验证才上代码 Harness。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/B7tsA5tjD08k2gd0OtXd" target="_blank" rel="noopener noreferrer">智能体 Harness 的演进：从链、图到代码化 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>原则一句话</strong>：使用能够可靠解决问题的最简单的系统。复杂度不是能力证明，是负债。</p>
+<p><strong>三档任务各配一个范式</strong></p>
+<table><thead><tr><th>任务特征</th><th>该用什么</th><th>典型场景</th><th>判据</th></tr></thead><tbody><tr><td>范围明确的线性任务，单次或有限的提示词序列就能出可接受结果</td><td>链</td><td>撰写客服回复、总结文档、内容审核、从可预测输入中提结构化数据</td><td>是否需要中间判断？不需要就别上图</td></tr><tr><td>需要条件分支、重试、工具调用或显式状态转换</td><td>图</td><td>多步骤客服处理、企业 IT 自动化、合规流水线、按中间输出触发不同动作的入职系统</td><td>有没有「如果 A 则走 B」的分叉</td></tr><tr><td>准确性、可验证性、故障恢复要求极高，且输出能被测试、编译、仿真或验证</td><td>代码 Harness</td><td>软件工程智能体、金融分析、法律文件验证、科学工作流、基础设施自动化</td><td>有没有一个确定的「通过/不通过」信号</td></tr></tbody></table>
+<p><strong>成本对照</strong>：链延迟最低、计算开销最小（模型调用、编排开销、状态管理都最少），是许多生产负载最经济的选择；图上去了多次 LLM 调用，成本和复杂度都涨；代码 Harness 有迭代推理循环与执行验证周期，开销最高，只在正确性远比速度成本重要时值。</p>
+<p><strong>四条不出错的底层原则（比选型更容易被忽略）</strong></p>
+<ol><li><strong>把 LLM 输出当不可信输入</strong>：文本输出在影响下游逻辑之前必须严格验证——Schema 检查、业务与合规规则、辅助模型，都算。</li><li><strong>规划与执行解耦</strong>：让模型提计划，但在受控的软件框架内执行。分开才能有透明度和控制力。</li><li><strong>可观测性</strong>：看不到内部行为就调不了。要抓每一步的执行状态、执行轨迹、验证结果，同时给敏感信息脱敏。</li><li><strong>持续改进</strong>：系统是动态演进的，要建反馈回路捕获失败，让提示词、策略、程序记忆一起演进，并在评估与仿真环境上投入。</li></ol>
+<p><strong>最该记住的一句</strong>：随着模型变强、成本下降，<strong>过度工程的倾向依然是一种常见的失败诱因</strong>——更复杂的抽象往往先增加计算开销、延迟和运维复杂性，而不是更快改善业务结果。强团队不是靠最大化架构复杂度取胜，而是优化每一分成本带来的能力收益。</p>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-10-%E6%99%BA%E8%83%BD%E4%BD%93Harness%E7%9A%84%E4%B8%89%E4%BB%A3%E8%8C%83%E5%BC%8F.html">智能体 Harness 的三代范式</a> — 这三档的由来与各自失效点</li><li><a href="card/2026-11-02-Build-Buy-Govern%E4%B8%89%E5%88%86%E6%B3%95.html">Build-Buy-Govern 三分法</a> — 另一种「按边界分档」的决策框架</li><li><a href="card/2026-11-04-%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF%E7%9A%84%E5%88%86%E5%9C%BA%E6%99%AF%E9%80%82%E9%85%8D%E5%88%A4%E6%8D%AE.html">技术路线的分场景适配判据</a> — 四问拆路线之争，方法论同源</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>五维（复杂度、可靠性、可解释性、延迟、成本）没有权重与阈值，实际选型时仍需经验判断，能否量化？</li><li>「过度工程」的判断时点：什么时候该从链升到图？缺触发条件（如失败率超过多少）</li><li>四条原则里的「程序记忆」指什么，原文未展开，需查相关文献</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>

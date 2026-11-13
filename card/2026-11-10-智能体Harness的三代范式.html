@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智能体 Harness 的三代范式</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">智能体 Harness 的三代范式</h1>
+<div class="meta">概念 · 科技 · 入 2026-11-10</div>
+<p class="lead">智能体框架三代演化——链（提示词编排）、图（显式控制流）、代码（生成、执行、验证）。分界不是工具换代，而是把模型的不确定性关进哪种结构：链靠文本保真、图靠声明式流程、代码靠可执行可验证的产物。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/B7tsA5tjD08k2gd0OtXd" target="_blank" rel="noopener noreferrer">智能体 Harness 的演进：从链、图到代码化 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>Harness 是什么</strong>：围绕概率模型搭建的脚手架，也叫结构化执行框架——让模型变得稳定、可观测、达到生产级。三种范式是同一目标的三代解法。</p>
+<table><thead><tr><th>范式</th><th>组织方式</th><th>约束不确定性的手段</th><th>失效点</th><th>代价</th></tr></thead><tbody><tr><td>链</td><td>提示词串行，上一步输出接下一步输入</td><td>靠上一步的文本保真度</td><td>上游一个错误级联传播，系统没有内置机制识别或自动修复</td><td>上线最快、延迟与开销最低</td></tr><tr><td>图</td><td>节点＝任务，边＝流程</td><td>控制流显式、可声明；条件执行、重试回退、结构化状态、显式验证</td><td>故障恢复逻辑、校验规则、边界异常都得手写；流程定义与评测框架变脆</td><td>多次 LLM 调用，延迟与成本上升</td></tr><tr><td>代码</td><td>沙箱里生成、执行、验证代码</td><td>确定性的通过/失败二元反馈</td><td>需要沙箱、埋点、验证 Harness、迭代循环四件套</td><td>计算与延迟开销最高</td></tr></tbody></table>
+<p><strong>最关键的一句判断</strong>：大模型的自然语言输出具有概率性，在后续验证步骤之前本质上是不可靠的；而代码是确定性的——要么通过编译、运行并输出正确结果，要么运行失败。「这种通过与失败的确定性提供了紧密的反馈回路。」可靠性不是来自更强的模型，而是来自更硬的反馈信号。</p>
+<p><strong>链制之所以脆，不是因为写得不好</strong>：整个工作流完全依赖前一步的文本保真度，而系统本身没有系统性识别错误或自动修复的机制。所以早期智能体是「尽力而为」——最初 80% 的体验构建很快，剩下 20% 要靠评估、提示词优化和持续人工迭代一点点磨。</p>
+<p><strong>图制的创新点容易被说错</strong>：不是「多了分支」，而是<strong>控制流从隐式变成显式、可声明</strong>——开发者不再把逻辑埋在提示词或代码里，而是写成方便查看、修改、梳理的执行计划。同一转变在数据管道和分布式系统史上出现过，不是 AI 独有。</p>
+<p><strong>图制还有一个天花板</strong>：本质上仍是由人预先定义好工作流的自动化程序，无法表达那些说不清、无法被确定性描述的任务。这是它必须让位给代码范式的根本原因。</p>
+<p><strong>代码范式换掉的是「谁来设计流程」</strong>：开发者不再预先设计复杂工作流，而是让智能体通过生成具备可验证输出的代码自行「寻找」解决方案。配套工具是规划、任务委派、记忆访问、Token 管理与压缩。</p>
+<p><strong>共同终点</strong>：从「提示词设计师」到「系统架构师」的角色转变；从「尽力而为」到「工程化可靠性」——在一切可能的情况下追求确定性，只在必要时使用可控的非确定性，并定义清晰的故障模式与恢复路径。</p>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-10-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84%E9%80%89%E5%9E%8B%E7%9A%84%E6%9C%80%E7%AE%80%E7%B3%BB%E7%BB%9F%E5%8E%9F%E5%88%99.html">智能体架构选型的最简系统原则</a> — 三代范式怎么选</li><li><a href="card/2026-11-10-LinkedIn%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E4%BB%A3%E7%A0%81%E8%8C%83%E5%BC%8F.html">LinkedIn数据分析智能体的代码范式</a> — 代码范式的落地样本</li><li><a href="card/2026-11-02-%E5%A4%96%E5%8C%85%E5%AE%9E%E7%8E%B0%E4%B8%8D%E7%AD%89%E4%BA%8E%E5%A4%96%E5%8C%85%E6%9E%B6%E6%9E%84%E8%B4%A3%E4%BB%BB.html">外包实现不等于外包架构责任</a> — 四条判据（单点、离线、选择性披露、抽象边界），可与「不确定性关进哪种结构」对照</li><li><a href="card/2026-11-06-%E8%B5%B0%E5%87%BA%E6%95%B0%E5%AD%A6.html">走出数学</a> — 另一篇讲 AI 与工具关系的文章</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>「Harness」这个译名在中文技术圈是否已稳定？原文用「智能体 Harness 框架／结构化执行框架」两个说法，写文章时需统一</li><li>A2A 与 ACP 的关系（ACP 最终并入 A2A）需查协议原文与时间线，本文只有一句</li><li>代码范式在非软件领域（法律、金融）如何做「可验证」，本文只说「可测试、可编译、可仿真」，缺具体判据</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>
