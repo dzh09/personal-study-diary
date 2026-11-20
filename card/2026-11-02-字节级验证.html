@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>字节级验证</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">字节级验证</h1>
+<div class="meta">方法 · 科技 · 入 2026-11-02</div>
+<p class="lead">判断 AI 是否真正复原程序逻辑，不看代码像不像，而看重建函数能否通过原始用例、编译后字节是否一致。REA 重建声像定位函数即匹配 3205 个用例、63 字节全同。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/8mCjWWFLdjDA2vb51QZs" target="_blank" rel="noopener noreferrer">当AI能读懂二进制闭源软件还剩多少护城河 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>做法</strong>：把「像不像」换成「能不能过」。</p>
+<ul><li><strong>行为层</strong>：用原始程序的测试用例跑重建实现，要求全部通过。</li><li><strong>字节层</strong>：重新编译后与原始函数逐字节比对，要求完全一致。</li></ul>
+<p><strong>REA 给出的成绩单</strong></p>
+<ul><li>DX-Ball 声像定位函数：匹配全部 <strong>3205 个</strong>原始 x86 用例，编译后函数 <strong>63 个字节全部一致</strong>。</li><li>另有 Notion Electron 剪贴板实现追踪、东方 4 的 16 位弹幕角度算法恢复。</li></ul>
+<p><strong>为什么这条方法值得单独记</strong></p>
+<ul><li>它给「AI 生成的东西可信吗」提供了一个可操作的验收标准，而不是靠人眼审查。</li><li>可迁移到任何「有参照实现」的场景：重写遗留代码、迁移算法、复原协议栈。有 golden case 就能做等价性验证。</li><li>也解释了为什么逆向特别适合 AI：真值就在二进制里，比对是机械的。</li></ul>
+<p><strong>限度</strong>：字节一致只在同编译器、同优化选项下成立；跨平台复原只能退到行为层验证。</p>
+<h2>相关笔记</h2>
+<ul><li>2026-11-02-当AI能读懂二进制闭源软件还剩多少护城河 — 原始剪藏</li><li><a href="card/2026-11-02-REA%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%99%BA%E8%83%BD%E4%BD%93.html">REA 逆向工程智能体</a> — 方法的来源</li><li><a href="card/2026-11-02-%E9%97%AD%E6%BA%90%E6%8A%A4%E5%9F%8E%E6%B2%B3%E5%A4%B1%E6%95%88.html">闭源护城河失效</a> — 方法所依附的工程范式</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>找一个有符号的小程序做对照实验：去掉符号后让模型复原，看能否过用例</li><li>追问：字节一致是否依赖优化等级？不同 -O 级别下结论会不会变</li><li>思考：这套「用例 + 字节」的验收思路，能不能用到 AI 写业务代码的验收上？</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>

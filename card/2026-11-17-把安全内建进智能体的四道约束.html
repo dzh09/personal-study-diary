@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>把安全内建进智能体的四道约束</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">把安全内建进智能体的四道约束</h1>
+<div class="meta">方法 · 科技 · 入 2026-11-17</div>
+<p class="lead">把安全内建进智能体要做四道约束：数据不外流、工具与任务限权、过程可审计且高危可叫停、全生命周期多方协同。判一套方案合格与否，看有没有「叫停」这一条。</p>
+<div class="meta">原文：<a href="http://paper.ce.cn/pc/content/202611/16/content_341971.html" target="_blank" rel="noopener noreferrer">开放协作托举人工智能普惠发展 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p>原文给出的做法可以排成四道关，从资产到治理逐层收紧：</p>
+<p><strong>第一道：数据关</strong></p>
+<p>管好敏感数据、保护独家经验。企业上智能体时最容易被忽略的一步——智能体要办事就得读资料，读得越多，越需要先划清哪些资料不给它看。</p>
+<p><strong>第二道：权限关</strong></p>
+<p>约束智能体<strong>调用工具、执行任务</strong>的权限。这是「做错事」风险的正面防线：不是等它做错再拦，而是让它从一开始就只能做被授权的那部分。原文的说法是，智能体参与业务越深，对安全的要求越高——权限的粒度要跟着业务深度一起收紧。</p>
+<p><strong>第三道：过程关</strong></p>
+<p>让过程可审计、可干预、高危操作可叫停。360 的「紧箍宙」就是照这个思路做的：约束智能体的权限与行为，全程留痕，关键时刻人能中断。这套系统之下，其自研 AI 漏洞挖掘智能体「图龙锋」已累计挖出漏洞超 1.5 万个。</p>
+<p><strong>第四道：治理关</strong></p>
+<ul><li>曾毅（中国人民大学）：构建 AI 全生命周期治理体系，推进多方主体协同参与；发展中国家即便算力有限，也应建立风险评估机制，并参与全球治理网络、开展本土人才培养。</li><li>云晓春（中国工程院）：治理上要企业自律、政府监管评测、社会监督三方协同发力，既保持开放创新活力，又夯实安全底座。</li><li>载体层面：曙光云在乌镇发布政企可信桌面级 AI 智能体平台 OneBox，把任务执行能力与私有化部署、权限管理、安全保障合在一起，让智能体在政企自有环境里调用知识与工具。</li></ul>
+<p><strong>可复用的一张清单</strong></p>
+<ol><li>它能看到哪些数据？（分级，最小可见）</li><li>它能调用哪些工具？（白名单，最小授权）</li><li>每一次调用留不留痕？出事能不能回溯到具体一步？</li><li>高危动作有没有一键叫停，谁有权按？</li><li>谁做评测、谁做监督，出问题走哪条追责线？</li></ol>
+<p>前四个是工程问题，第五个是组织问题。原文的逻辑是两者都要，缺一个就会在事故里暴露。</p>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-17-%E6%99%BA%E8%83%BD%E4%BD%93%E5%87%BA%E9%94%99%E6%98%AF%E5%81%9A%E9%94%99%E4%BA%8B.html">智能体出错是做错事</a> — 这套做法要解决的问题</li><li><a href="card/2026-11-17-%E6%B5%AA%E6%BD%AE%E4%BA%91%E6%B4%B2%E7%82%BC%E5%8C%96%E4%BC%81%E4%B8%9A%E8%B5%84%E8%B4%A8%E5%AE%A1%E6%A0%B8%E4%BB%8E29%E5%88%86%E9%92%9F%E5%88%B0%E7%A7%92%E7%BA%A7.html">浪潮云洲炼化企业资质审核从29分钟到秒级</a> — 大规模上线时这套约束的真实场景</li><li><a href="card/2026-11-02-Build-Buy-Govern%E4%B8%89%E5%88%86%E6%B3%95.html">Build-Buy-Govern 三分法</a> — 「Govern」那一支的具体展开</li><li><a href="card/2026-11-02-%E5%A4%96%E5%8C%85%E5%AE%9E%E7%8E%B0%E4%B8%8D%E7%AD%89%E4%BA%8E%E5%A4%96%E5%8C%85%E6%9E%B6%E6%9E%84%E8%B4%A3%E4%BB%BB.html">外包实现不等于外包架构责任</a> — 同为「能力可以外包、责任不能外包」</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>「紧箍宙」「OneBox」都是厂商自述能力，没有第三方评测，引用时须写明是企业发布而非验证结论。</li><li>「图龙锋累计挖漏洞超 1.5 万个」缺时间区间与漏洞等级分布，数字本身不足以说明能力。</li><li>待补：政企私有化部署下，权限模型与既有 IAM 体系怎么对接——这是落地时最先卡住的地方，原文没有涉及。</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>

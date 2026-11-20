@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机房运维的准入与应急规程</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">机房运维的准入与应急规程</h1>
+<div class="meta">方法 · 社会观察/技术与人 · 技术与人 · 入 2026-11-17</div>
+<p class="lead">机房运维的硬规程：暖通、消防、弱电、电气四门都要会；应急 2 分钟速报、5 分钟核实、10 分钟处理；巡检错一字扣 200 元，月度笔试 80 分及格，甲方每月飞检。</p>
+<div class="meta">原文：<a href="https://www.jiemian.com/article/15310890.html" target="_blank" rel="noopener noreferrer">年轻人去乌兰察布守机房，真能月入三万吗？ ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p>一条从入职到值守的完整动作链，原文由做了五年运维的张立伟给出：</p>
+<p><strong>一、准入：四个专业必须同时会</strong></p>
+<ul><li><strong>暖通</strong>——冷机、精密空调给机柜散热，判断温度异常。</li><li><strong>消防</strong>——机房到处是电路，起火点判断与处置。</li><li><strong>弱电</strong>——大部分时间盯监视器，靠弱电知识读告警信息。</li><li><strong>电气</strong>——蓄电池、发电机、变压器、UPS、PDU 一路下来，不懂电气连告警都处理不了。</li></ul>
+<p>判据很直接：只会其中一门做不了运维。这也是「低门槛」招聘话术与真实岗位之间最硬的一道界线。</p>
+<p><strong>二、值守：排班与纪律</strong></p>
+<p>上两天休两天，轮流值夜班，<strong>夜班不能睡</strong>。原文有反例：一名同事夜班睡着，配电室单路掉电、供电冗余没兜住，服务器直接宕机，用户侧表现为刷视频突然黑屏；客户查因后报警起诉，赔偿「按秒计费，每秒以万元为单位」，若认定是个人问题则落在个人身上。</p>
+<p><strong>三、应急：2 分钟速报、5 分钟核实、10 分钟处理</strong></p>
+<p>以 UPS 报警为例，动作是<strong>把故障 UPS 关机隔离</strong>——不隔离，一旦它掉电，该路服务器就降级为单路供电、冗余消失，即成大事故。原文里讲述者第一次遇到时找不到编号、班长在对讲机里催，最后靠私人手机视频指导才关掉机器。规程的意义正在这里：临场慌乱是常态，只能靠背下来的动作和编号定位顶住。</p>
+<p><strong>四、日常考核：四道闸</strong></p>
+<ul><li>每天巡检，报告少一个字或错一个字扣 200 元；</li><li>每月专业考试，笔试须 80 分以上，不通过就开除；</li><li>每天三四轮演练，把可能的应急情况都过一遍；</li><li>甲方每月飞行检查（飞检）。</li></ul>
+<p><strong>迁移</strong></p>
+<p>这套规程可以搬到任何「高可用系统 + 有人值守」的场景：先定四个必须同时掌握的知识域，再把响应切成「报告—核实—处置」三级时限，最后用低成本高频检查（错字扣款、月考、演练、飞检）维持状态。三步都不新，难的是每一条都真的执行。</p>
+<h2>相关笔记</h2>
+<ul><li><a href="card/2026-11-17-%E7%AE%97%E5%8A%9B%E7%BA%A2%E5%88%A9%E7%9A%84%E6%97%B6%E9%97%B4%E7%AA%97%E5%8F%A3.html">算力红利的时间窗口</a> — 为什么这套规程把「低门槛」变成了伪命题</li><li><a href="card/2026-11-17-%E4%B9%8C%E5%85%B0%E5%AF%9F%E5%B8%83%E4%BB%8E%E5%9C%9F%E8%B1%86%E8%8E%9C%E9%9D%A2%E5%88%B0%E6%99%BA%E7%AE%97%E6%9E%A2%E7%BA%BD.html">乌兰察布从土豆莜面到智算枢纽</a> — 规程所在的产业背景</li><li><a href="card/2026-11-16-%E6%A3%80%E9%AA%8C%E4%B8%87%E5%8F%B0%E8%83%BD%E5%90%A6%E4%B8%8A%E5%B2%97%E7%9A%84%E5%9B%9B%E9%A1%B9%E6%8C%87%E6%A0%87.html">检验万台能否上岗的四项指标</a> — 另一套「能不能上岗」的验收口径</li><li><a href="theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">主题-社会观察</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li>「2 分钟速报、5 分钟核实、10 分钟处理」是讲述者所在公司的要求，行业是否有统一 SLA 未核实，引用时不要当国标。</li><li>赔偿「按秒计费、每秒以万元为单位」属转述，未见判决或合同原文，只能作量级参考。</li><li>延伸：这类岗位的规程能不能部分自动化（告警定位、编号检索），是「AI 替代运维」讨论真正的落点。</li></ul>
+<a class="back" href="theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">← 主题：社会观察</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>
