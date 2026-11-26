@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REA 逆向工程智能体</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><div class="wrap">
+<header class="top"><h1><a href="../index.html" style="color:inherit">个人知识库</a></h1>
+<nav><a href="../index.html">入库索引</a><a href="../listen.html">朗读</a><a href="../theme/%E5%85%AC%E8%80%83.html">公考</a><a href="../theme/%E7%A7%91%E6%8A%80.html">科技</a><a href="../theme/%E5%9F%BA%E5%B1%82%E6%B2%BB%E7%90%86.html">基层治理</a><a href="../theme/%E6%96%87%E5%AD%A6.html">文学</a><a href="../theme/%E7%A4%BE%E4%BC%9A%E8%A7%82%E5%AF%9F.html">社会观察</a><a href="../theme/%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB.html">亲密关系</a></nav></header>
+<h1 class="page">REA 逆向工程智能体</h1>
+<div class="meta">案例 · 科技 · 入 2026-11-02</div>
+<p class="lead">开源 REA 用 MCP 把 Claude Code、Codex 接入 Ghidra、Hopper、IDA，本地运行。案例含 Notion 剪贴板追踪、DX-Ball 声像重建、东方 4 弹幕恢复。</p>
+<div class="meta">原文：<a href="https://www.infoq.cn/article/8mCjWWFLdjDA2vb51QZs" target="_blank" rel="noopener noreferrer">当AI能读懂二进制闭源软件还剩多少护城河 ↗</a></div>
+<div class="note-line">全文不入站，仅给原刊链接</div>
+<p><strong>是什么</strong>：Reverse Engineer Anything，开源逆向工程智能体框架，作者网名 morluto。通过 MCP 服务器把反汇编工具开放给编码智能体，支持对二进制、Electron／JavaScript、.NET 程序集做静态分析与假设验证。</p>
+<p><strong>能力</strong></p>
+<ul><li>跨平台二进制函数级行为追踪；</li><li>分析结果驱动的迭代调查闭环；</li><li>本地运行，不承诺还原源码。</li></ul>
+<p><strong>工具面</strong>：Ghidra（NSA 开源）、Hopper（macOS 原生）、IDA（Hex-Rays）。</p>
+<p><strong>三个展示案例</strong></p>
+<ol><li>Notion 的 Electron 剪贴板实现追踪；</li><li>DX-Ball 声音声像定位函数重建（3205 用例全过，63 字节一致）；</li><li>东方 4 的 16 位代码弹幕环角度计算逻辑恢复。</li></ol>
+<p><strong>⚠️ 数据存疑</strong>：文中称「GitHub 超 20 万个 Star」，与同类项目量级明显不符，疑为原文笔误或转述失真，引用前必须核实。</p>
+<p><strong>现实落地场景</strong>（我最关心的一条）：逆向固件、恢复遗留设备协议、理解无源码的工控程序。</p>
+<h2>相关笔记</h2>
+<ul><li>2026-11-02-当AI能读懂二进制闭源软件还剩多少护城河 — 原始剪藏</li><li><a href="card/2026-11-02-%E9%97%AD%E6%BA%90%E6%8A%A4%E5%9F%8E%E6%B2%B3%E5%A4%B1%E6%95%88.html">闭源护城河失效</a> — 从本案例抽出的范式</li><li><a href="card/2026-11-02-%E5%AD%97%E8%8A%82%E7%BA%A7%E9%AA%8C%E8%AF%81.html">字节级验证</a> — 它的验证方法</li><li><a href="card/2026-11-01-%E8%BF%87%E6%9C%9F%E7%81%AB%E8%BD%A6%E7%A5%A8%E9%80%80%E7%A5%A8%E5%AE%9E%E9%AA%8C.html">过期火车票退票实验</a> — 另一类「智能体自主试错」样本</li><li><a href="theme/%E7%A7%91%E6%8A%80.html">主题-科技</a> — 主题地图</li></ul>
+<h2>待办</h2>
+<ul><li><strong>必核</strong>：GitHub Star 数（文中 20 万），大概率失真</li><li>实跑一次：拿一块有串口的开发板固件，看能不能恢复协议解析函数</li><li>读 README 的 showcases 与 Touhou 4 案例的方法说明</li><li>追问：对混淆／加壳的二进制效果如何？展示案例都是未加壳的</li></ul>
+<a class="back" href="theme/%E7%A7%91%E6%8A%80.html">← 主题：科技</a>
+<footer>个人知识库 · 由本地 Obsidian 库自动生成 · 仅收录提炼卡片，原文存档不公开</footer>
+</div></body></html>
